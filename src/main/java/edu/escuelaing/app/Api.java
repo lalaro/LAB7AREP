@@ -1,5 +1,5 @@
 package edu.escuelaing.app;
 
-public class MathServices {
+public class Api {
 
 }
