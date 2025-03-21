@@ -41,6 +41,7 @@ Revisar las rutas de la máquina
 `  java -version `
 
 ### *Sol del Laboratorio.*
+
 ### *Resumen del proyecto:*
 
 El proyecto consistió en el diseño e implementación de una API monolítica en Spring Boot que permite a los usuarios crear y registrar posts de hasta 140 caracteres en un stream único, similar a Twitter. Se definieron tres entidades principales: Usuario, Hilo (stream) y Post, asegurando una estructura clara para la gestión de publicaciones.
