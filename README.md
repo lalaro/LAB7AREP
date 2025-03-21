@@ -40,6 +40,85 @@ Revisar las rutas de la máquina
 
 `  java -version `
 
+![image0.jpeg](src/main/resources/static/images/image0.jpeg)
+
+### *Sol del Laboratorio.*
+### *Resumen del proyecto:*
+
+
+### *Arquitectura del sistema:*
+
+
+### *Detalle de la arquitectura:*
+
+
+1. Diseñe un API y cree un monolito Spring que permita a los usuarios hacer posts de 140 caracteres e ir registrandolos en un stream único de posts (a la Twitter). Piense en tres entidades Usuario, hilo(stream), posts.
+
+![image2.jpeg](src/main/resources/static/images/image2.jpeg)
+
+
+2. Cree un aplicación JS para usar el servicio. Depliegue la aplicación en S3. Asegúrese que esté disponible sobre internet.
+
+Primero se ccrea el S3 en AWS:
+
+![image3.jpeg](src/main/resources/static/images/image3.jpeg)
+![image4.jpeg](src/main/resources/static/images/image4.jpeg)
+![image5.jpeg](src/main/resources/static/images/image5.jpeg)
+![image5.1.jpeg](src/main/resources/static/images/image5.1.jpeg)
+![image5.2.jpeg](src/main/resources/static/images/image5.2.jpeg)
+
+3. Pruebe la aplicación Web
+
+![image6.1.jpeg](src/main/resources/static/images/image6.1.jpeg)
+![image6.jpeg](src/main/resources/static/images/image6.jpeg)
+
+4. Agregue seguridad usando JWT con el servicio cognito de AWS o otra tecnología.
+
+![image8.jpeg](src/main/resources/static/images/image8.jpeg)
+![image7.jpeg](src/main/resources/static/images/image7.jpeg)
+
+5. Despliegue el servicio en AWS lambda
+
+Por el tamaño del JAR fue necesario crear una instancia en S3 y traerla por el URL.
+![image9.jpeg](src/main/resources/static/images/image9.jpeg)
+![image10.jpeg](src/main/resources/static/images/image10.jpeg)
+![image11.jpeg](src/main/resources/static/images/image11.jpeg)
+![image12.jpeg](src/main/resources/static/images/image12.jpeg)
+
+### *Video:*
+
+Video: [Video funcionamiento]()
+
+## Ejecutando las pruebas
+
+Podemos Abrir en terminal el proyecto y ejecutar las pruebas desde el PowerShell, en el caso de Windows. Y ejecutamos el comando:
+
+` mvn test `
+
+O de igual forma en el ID que deseemos.
+
+Así se vera:
+
+
+### Desglose en pruebas de extremo a extremo
+
+### Y pruebas de estilo de código
+
+## Despliegue
+
+Podemos Abrir en terminal el proyecto y compilar y empaquetar el proyecto desde el PowerShell, en el caso de Windows. Y ejecutamos los comandos:
+
+` mvn clean install `
+
+` mvn spring-boot:run `
+
+O de igual forma en el ID que deseemos.
+
+Así se verá:
+
+![image13.jpeg](src/main/resources/static/images/image13.jpeg)
+![image14.jpeg](src/main/resources/static/images/image14.jpeg)
+
 ## Construido con
 
 * [Maven](https://maven.apache.org/) - Gestión de dependencias.
