@@ -43,6 +43,11 @@ Revisar las rutas de la máquina
 ### *Sol del Laboratorio.*
 ### *Resumen del proyecto:*
 
+El proyecto consistió en el diseño e implementación de una API monolítica en Spring Boot que permite a los usuarios crear y registrar posts de hasta 140 caracteres en un stream único, similar a Twitter. Se definieron tres entidades principales: Usuario, Hilo (stream) y Post, asegurando una estructura clara para la gestión de publicaciones.
+
+Para interactuar con el servicio, se desarrolló una aplicación web que consume la API y permite a los usuarios visualizar y publicar posts en tiempo real. La aplicación fue desplegada en AWS S3, garantizando su disponibilidad en internet.
+
+Se incorporó seguridad mediante JWT con Amazon Cognito para la autenticación de usuarios, protegiendo el acceso a la API y asegurando que solo usuarios autenticados puedan interactuar con la plataforma. Finalmente, el servicio backend fue desplegado en AWS Lambda, permitiendo escalabilidad y disponibilidad en la nube, y se realizaron pruebas de la aplicación web para validar su correcto funcionamiento.
 
 ### *Arquitectura del sistema:*
 
@@ -97,10 +102,67 @@ O de igual forma en el ID que deseemos.
 
 Así se vera:
 
+![image15.jpeg](src/main/resources/static/images/image15.jpeg)
+![image16.jpeg](src/main/resources/static/images/image16.jpeg)
+![image17.jpeg](src/main/resources/static/images/image17.jpeg)
+
+Es importante aclarar que algunas pruebas estan configuradas con el JWT, así que una vez se apague puede generar advertencias.
 
 ### Desglose en pruebas de extremo a extremo
 
+1. testRedirectToAuthentication
+
+Qué prueba: Verifica si la API redirige a la autenticación en endpoints protegidos.
+Por qué la prueba: Asegura que los usuarios no autenticados no puedan acceder a recursos restringidos, protegiendo así la seguridad del sistema.
+
+2. testSecurityHeaders
+
+Qué prueba: Verifica que las cabeceras de seguridad estén presentes en la respuesta del servidor.
+Por qué la prueba: Garantiza que la aplicación sigue las mejores prácticas de seguridad HTTP para proteger contra ataques como clickjacking y MIME sniffing.
+
+3. testDeletePostReturnsEmptyResponse
+
+Qué prueba: Verifica que la eliminación de un post devuelve un JSON vacío.
+Por qué la prueba: Asegura que la API responde correctamente a las solicitudes de eliminación sin exponer información innecesaria.
+
+4. testRedirectToAuthenticationForOtherRoute
+
+Qué prueba: Verifica si la API redirige a la autenticación en otra ruta protegida.
+Por qué la prueba: Confirma que todas las rutas sensibles requieren autenticación antes de permitir el acceso, reforzando la seguridad del sistema.
+
+5. testSecurityHeadersForDifferentRoute
+
+Qué prueba: Verifica que las cabeceras de seguridad están presentes en un endpoint diferente.
+Por qué la prueba: Asegura la consistencia de las medidas de seguridad en todas las rutas de la aplicación.
+
+6. testDeleteUserReturnsEmptyResponse
+
+Qué prueba: Verifica que la eliminación de un usuario devuelve un JSON vacío.
+Por qué la prueba: Garantiza que la API mantiene un comportamiento coherente en la gestión de recursos eliminados.
+
+7. testSecurityHeadersForProfile
+
+Qué prueba: Verifica que las cabeceras de seguridad están presentes en la página de perfil del usuario.
+Por qué la prueba: Asegura que la información del usuario esté protegida contra vulnerabilidades relacionadas con respuestas HTTP.
+
+8. testConcurrentPostCreation
+
+Qué prueba: Verifica que múltiples usuarios pueden crear posts simultáneamente sin problemas de concurrencia.
+Por qué la prueba: Garantiza que el sistema maneja correctamente múltiples solicitudes concurrentes sin generar inconsistencias en los datos.
+
+9. testUnauthorizedUserCannotDeletePost
+
+Qué prueba: Verifica que un usuario sin permisos no puede eliminar un post.
+Por qué la prueba: Asegura que el control de acceso está correctamente implementado y que solo los usuarios autorizados pueden realizar ciertas acciones.
+
+10. testUnauthorizedAccess
+
+Qué prueba: Verifica que un usuario no autenticado recibe un error 401 al intentar acceder a rutas protegidas.
+Por qué la prueba: Confirma que la API impide el acceso a usuarios no autenticados y los redirige al proceso de autenticación.
+
 ### Y pruebas de estilo de código
+
+Las pruebas verifican que la API maneja correctamente la autenticación, la seguridad y el control de acceso a los recursos. Evalúan si los usuarios no autenticados son redirigidos al inicio de sesión, garantizan la presencia de cabeceras de seguridad para mitigar vulnerabilidades, y validan que solo los usuarios autorizados puedan realizar acciones sensibles, como eliminar posts o acceder a datos protegidos. Además, aseguran que el sistema pueda manejar múltiples solicitudes concurrentes sin errores y que las respuestas sean coherentes y seguras.
 
 ## Despliegue
 
