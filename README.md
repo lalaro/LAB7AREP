@@ -2,11 +2,11 @@
 
 Para clonar el proyecto 
 
-git clone  ´ https://github.com/lalaro/ExamplePOJO.git ´
+git clone  ´ https://github.com/lalaro/LAB7AREP.git ´
 
 ### Prerrequisitos
 
-Se necesita de Maven (La versión más reciente) y Java 21, la instalación debe realizarse desde las paginas oficiales de cada programa.
+Se necesita de Maven (La versión más reciente) y Java 17, la instalación debe realizarse desde las paginas oficiales de cada programa.
 
 ### Instalación
 
@@ -17,7 +17,7 @@ Luego revisamos que haya quedado bien configurado con el comando para Windows:
 o
 ` mvn -version `
 
-Para Java debe irse a https://www.oracle.com/java/technologies/downloads/?er=221886, descargar la versión 21 de Java y agregarse en la carpeta de Program Files, luego se hace la respectiva configuración de variables de entorno según la ubicación que tenemos para el archivo de instalación, tanto de JAVA_HOME y de Path.
+Para Java debe irse a https://www.oracle.com/java/technologies/downloads/?er=221886, descargar la versión 17 de Java y agregarse en la carpeta de Program Files, luego se hace la respectiva configuración de variables de entorno según la ubicación que tenemos para el archivo de instalación, tanto de JAVA_HOME y de Path.
 Luego revisamos que haya quedado bien configurado con el comando para Windows:
 
 ` java -version `
@@ -26,21 +26,19 @@ Si no tenemos la versión solicitada podemos hacer lo siguiente, para el caso de
 
 Ir al Windows PowerShell y ejecutar como administrador los siguientes codigos:
 
-` [System.Environment]::SetEnvironmentVariable("JAVA_HOME", "C:\Program Files\Java\jdk-21", [System.EnvironmentVariableTarget]::Machine) `
+` [System.Environment]::SetEnvironmentVariable("JAVA_HOME", "C:\Program Files\Java\jdk-17", [System.EnvironmentVariableTarget]::Machine) `
 
 Revisar las rutas de la máquina
 
-`  $env:JAVA_HOME = "C:\Program Files\Java\jdk-21" `
+`  $env:JAVA_HOME = "C:\Program Files\Java\jdk-17" `
 
-`  $env:Path = "C:\Program Files\Java\jdk-21\bin;" + $env:Path `
+`  $env:Path = "C:\Program Files\Java\jdk-17\bin;" + $env:Path `
 
 `  echo $env:JAVA_HOME `
 
 `  javac -version `
 
 `  java -version `
-
-![image0.jpeg](src/main/resources/static/images/image0.jpeg)
 
 ### *Sol del Laboratorio.*
 ### *Resumen del proyecto:*
@@ -137,7 +135,7 @@ Usamos [SemVer](http://semver.org/) para el versionado.
 
 ## Autores
 
-* **Laura Valentina Rodríguez Ortegón** - *Lab7 AREP* - [Repositorio](https://github.com/lalaro/LAB5AREP_CRUD.git)
+* **Laura Valentina Rodríguez Ortegón** - *Lab7 AREP* - [Repositorio](https://github.com/lalaro/LAB7AREP.git)
 * **Juan Pablo Fernandez Gonzalez** 
 * **Andres Felipe Montes Ortiz**
 ## Licencia
