@@ -93,11 +93,13 @@ Por el tamaño del JAR fue necesario crear una instancia en S3 y traerla por el 
 ![image10.jpeg](src/main/resources/static/images/image10.jpeg)
 ![image11.jpeg](src/main/resources/static/images/image11.jpeg)
 ![image12.jpeg](src/main/resources/static/images/image12.jpeg)
+![image18.jpeg](src/main/resources/static/images/image18.jpeg)
 
 ### *Video:*
 
-Video: [Video funcionamiento]()
+Video:
 
+[VideoChat.mp4](src/main/resources/static/images/VideoChat.mp4)
 ## Ejecutando las pruebas
 
 Podemos Abrir en terminal el proyecto y ejecutar las pruebas desde el PowerShell, en el caso de Windows. Y ejecutamos el comando:
