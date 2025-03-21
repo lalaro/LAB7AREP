@@ -51,9 +51,15 @@ Se incorporó seguridad mediante JWT con Amazon Cognito para la autenticación d
 
 ### *Arquitectura del sistema:*
 
+![image1.jpeg](src/main/resources/static/images/image1.jpeg)
 
 ### *Detalle de la arquitectura:*
 
+El diagrama representa la arquitectura de una aplicación web similar a Twitter, desplegada en AWS. Los usuarios interactúan con la plataforma a través del navegador, enviando y recibiendo datos en formato JSON. La aplicación web está alojada en AWS Lambda, donde se ejecuta un proyecto de Spring Boot, eliminando la necesidad de servidores dedicados.
+
+Cuando un usuario inicia sesión, la autenticación es gestionada por AWS Cognito, que devuelve un JWT para autorizar futuras solicitudes. Las interacciones (publicar tweets) son enviadas a Lambda, que procesa las peticiones y se comunica con la base de datos para almacenar o recuperar la información.
+
+El backend en Spring Boot dentro de Lambda responde a las solicitudes con JSON, que es interpretado por el navegador del usuario para actualizar la interfaz. Así, la aplicación se mantiene escalable y eficiente, optimizando costos al ejecutarse solo cuando hay actividad de los usuarios.
 
 1. Diseñe un API y cree un monolito Spring que permita a los usuarios hacer posts de 140 caracteres e ir registrandolos en un stream único de posts (a la Twitter). Piense en tres entidades Usuario, hilo(stream), posts.
 
